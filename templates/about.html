@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+
+{% block title %}Project Workflow | Rising Waters{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">Project workflow</p>
+    <h1>From dataset to cloud deployment</h1>
+    <p>Rising Waters guides learners through a complete machine learning pipeline for disaster preparedness.</p>
+</section>
+
+<section class="timeline">
+    <article>
+        <span>1</span>
+        <h2>Environment Setup</h2>
+        <p>Install Python, Anaconda or Jupyter Notebook, Flask, NumPy, Pandas, Scikit-learn, Seaborn, and XGBoost.</p>
+    </article>
+    <article>
+        <span>2</span>
+        <h2>Dataset Collection</h2>
+        <p>Use open-source flood prediction datasets with rainfall, cloud visibility, and seasonal weather features.</p>
+    </article>
+    <article>
+        <span>3</span>
+        <h2>Analysis and Preprocessing</h2>
+        <p>Study distributions, heat maps, missing values, outliers, feature scaling, and train-test splits.</p>
+    </article>
+    <article>
+        <span>4</span>
+        <h2>Model Building</h2>
+        <p>Train and compare Decision Tree, Random Forest, KNN, and XGBoost using accuracy and classification reports.</p>
+    </article>
+    <article>
+        <span>5</span>
+        <h2>Flask Deployment</h2>
+        <p>Save the best model as <code>floods.save</code>, connect it to Flask, and deploy it on IBM Cloud.</p>
+    </article>
+</section>
+{% endblock %}

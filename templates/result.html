@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block title %}Prediction Result | Rising Waters{% endblock %}
+
+{% block content %}
+<section class="result-shell {{ result.status }}">
+    <div class="result-card">
+        <p class="eyebrow">Flood risk result</p>
+        <h1>{{ result.label }}</h1>
+        {% if result.probability is not none %}
+        <div class="probability">
+            <span>{{ result.probability }}%</span>
+            <div class="risk-meter large">
+                <span style="width: {{ result.probability }}%"></span>
+            </div>
+        </div>
+        {% endif %}
+        <p class="advice">{{ result.advice }}</p>
+        <p class="source-note">{{ result.source }}</p>
+        <div class="result-actions">
+            <a class="button primary" href="{{ url_for('predict') }}">Check Another Region</a>
+            <a class="button secondary" href="{{ url_for('home') }}">Back Home</a>
+        </div>
+    </div>
+
+    <div class="reading-list">
+        <h2>Submitted readings</h2>
+        {% for key, value in values.items() %}
+        <div>
+            <span>{{ key.replace('_', ' ').title() }}</span>
+            <strong>{{ value }}</strong>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

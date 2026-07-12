@@ -1,0 +1,11 @@
+<svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Flood prediction shield</title>
+  <desc id="desc">A shield with rainfall lines and rising water waves.</desc>
+  <path d="M80 12L132 31V70C132 106 110 136 80 149C50 136 28 106 28 70V31L80 12Z" fill="#0E7490"/>
+  <path d="M80 25L119 39V70C119 98 104 122 80 135C56 122 41 98 41 70V39L80 25Z" fill="#ECFEFF"/>
+  <path d="M54 88C66 78 78 98 91 88C101 81 110 88 116 94V109H44V96C47 94 50 91 54 88Z" fill="#0891B2"/>
+  <path d="M44 112C58 101 71 123 86 112C99 103 109 110 116 117V125H44V112Z" fill="#164E63"/>
+  <path d="M62 45V70" stroke="#0E7490" stroke-width="7" stroke-linecap="round"/>
+  <path d="M80 40V67" stroke="#0E7490" stroke-width="7" stroke-linecap="round"/>
+  <path d="M98 48V70" stroke="#0E7490" stroke-width="7" stroke-linecap="round"/>
+</svg>

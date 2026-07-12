@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block title %}Predict Flood Risk | Rising Waters{% endblock %}
+
+{% block content %}
+<section class="page-header">
+    <p class="eyebrow">Prediction input</p>
+    <h1>Enter weather readings</h1>
+    <p>Use current rainfall and atmospheric values to classify flood risk instantly.</p>
+</section>
+
+<section class="form-layout">
+    <form class="prediction-form" method="post" action="{{ url_for('predict') }}" novalidate>
+        {% if errors %}
+        <div class="alert error" role="alert">
+            {% for error in errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <div class="input-grid">
+            {% for field in fields %}
+            <label class="field">
+                <span>{{ field.label }} <em>{{ field.unit }}</em></span>
+                <input
+                    type="number"
+                    name="{{ field.name }}"
+                    value="{{ values[field.name] if values else '' }}"
+                    placeholder="{{ field.placeholder }}"
+                    min="{{ field.min }}"
+                    {% if field.max is defined %}max="{{ field.max }}"{% endif %}
+                    step="{{ field.step }}"
+                    required>
+            </label>
+            {% endfor %}
+        </div>
+
+        <button class="button primary submit-button" type="submit">Predict Flood Risk</button>
+    </form>
+
+    <aside class="guidance-panel">
+        <h2>Model checklist</h2>
+        <ul>
+            <li>Decision Tree, Random Forest, KNN, and XGBoost supported in the workflow.</li>
+            <li>Place the trained model at <code>models/floods.save</code>.</li>
+            <li>Deploy the Flask app on IBM Cloud after local validation.</li>
+        </ul>
+    </aside>
+</section>
+{% endblock %}

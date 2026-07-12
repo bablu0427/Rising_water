@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %}Rising Waters | Flood Prediction{% endblock %}
+
+{% block content %}
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Early warning for flood-prone regions</p>
+        <h1>Rising Waters</h1>
+        <p class="hero-copy">
+            A machine learning approach to flood prediction using rainfall, visibility,
+            seasonal weather patterns, and classification models.
+        </p>
+        <div class="hero-actions">
+            <a class="button primary" href="{{ url_for('predict') }}">Start Prediction</a>
+            <a class="button secondary" href="{{ url_for('about') }}">View Workflow</a>
+        </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+        <div class="radar">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="forecast-panel">
+            <div class="panel-row">
+                <span>Annual Rainfall</span>
+                <strong>High</strong>
+            </div>
+            <div class="panel-row">
+                <span>Cloud Visibility</span>
+                <strong>76%</strong>
+            </div>
+            <div class="risk-meter">
+                <span style="width: 78%"></span>
+            </div>
+            <p>Risk classification: Flood Chance</p>
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="section-heading">
+        <p class="eyebrow">Operational scenarios</p>
+        <h2>Designed for preparedness and response</h2>
+    </div>
+    <div class="scenario-grid">
+        <article class="scenario-card">
+            <span class="card-icon">01</span>
+            <h3>Early Warning</h3>
+            <p>Meteorologists enter current readings and identify high-risk districts before conditions become critical.</p>
+        </article>
+        <article class="scenario-card">
+            <span class="card-icon">02</span>
+            <h3>Resource Allocation</h3>
+            <p>Response teams compare regional flood risk and prioritize field teams, shelters, and relief supplies.</p>
+        </article>
+        <article class="scenario-card">
+            <span class="card-icon">03</span>
+            <h3>Model Validation</h3>
+            <p>Analysts test historical records and compare Decision Tree, Random Forest, KNN, and XGBoost models.</p>
+        </article>
+    </div>
+</section>
+
+<section class="workflow-band">
+    <div>
+        <p class="eyebrow">Best model</p>
+        <h2>XGBoost accuracy: 96.55%</h2>
+    </div>
+    <a class="button light" href="{{ url_for('predict') }}">Run a Check</a>
+</section>
+{% endblock %}
